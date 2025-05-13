@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap" style="width: 80%; margin: 0 auto;">
+    <fieldset>
+      <form method="get" action="input.jsp">
+        <legend>배송 정보</legend>
+        <ul>
+          <li>
+            <label for="user-name">이름</label>
+            <input type="text" name="name" id="user-name"maxlength="5" minlength="2">
+          </li>
+          <li>
+            <label for="addr">배송 주소</label>
+            <input type="text" name="id" id="addr" size="40" >
+          </li>
+          <li>
+            <label for="mail">이메일 주소</label>
+            <input type="email" name="email" required id="mail">
+          </li>
+          <li>
+            <label for="phone">전화번호</label>
+            <input type="number" name="tel" placeholder="01012345678" minlength="11" id="phone">
+          </li>
+        </ul>
+        <input type="submit" value="서버로전송하기">
+      </fieldset>
+    </form>
+  </div>
+
+
+</body>
+</html>

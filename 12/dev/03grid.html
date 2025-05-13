@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 50%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      /* grid-template-columns: repeat(3,1fr); 이랑 똑같음! */
+      grid-template-rows: 100px 100px 100px;
+      border: 1px solid black;
+      gap: 10px;
+      padding: 10px;
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .item{
+      padding: 20px;
+      color: red;
+      font-size: 2rem;
+      border: 1px solid black;
+      background-color: beige;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    .item1{
+      background-color: rgb(83, 118, 224);
+      grid-column-start: 1;
+      grid-column-end: 4;
+      /* grid-column: 1/4; 랑 똑같다. */
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    .item2{
+      background-color: rgb(83, 201, 201);
+          grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      /* grid-row: 1/4;랑 똑같다. */
+    }
+    .item3{
+      background-color: rgb(13, 190, 75);
+          grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .item4{
+      background-color: rgb(192, 192, 35);
+          grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: -1;
+    }
+    .item5{
+      background-color: rgb(193, 102, 214);
+          grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+  </div>
+</body>
+</html>

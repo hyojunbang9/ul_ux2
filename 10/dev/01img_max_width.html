@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      background-image: url(./../img/방효준.jpeg);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: repeat;
+      margin-bottom: 20px;
+    }
+
+    .container-2 {
+      width: 5000px;
+      height: 300px;
+      border: 1px solid black;
+    }
+
+    .container-2>img {
+      /* .container-2 img -> 이거는 자손 */
+      /* .container-2>img -> 이거는 자식 */
+      width: 100%;
+      object-fit: cover;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+  </div>
+  <div class="container-2">
+    <img src="./../img/방효준.jpeg" alt="예쁜 고양이">
+  </div>
+</body>
+
+</html>

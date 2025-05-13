@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      color: rgb(199, 223, 18);
+      background-color: beige;
+      border: 1px solid black;
+      margin-bottom: 10px;
+      /* 인라인 가운데로 정렬하는 방법 */
+      text-align: center;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header1 {
+        color: rgb(92, 222, 98);
+        background-color: rgb(223, 223, 114);
+        border: 1px solid black;
+        margin-bottom: 10px;
+        /* 인라인 가운데로 정렬하는 방법 */
+        text-align: center;
+      }
+    }
+
+    /* 태블릿 PC */
+    @media screen and (min-width: 600px) and (max-width: 990px) {
+      .header2 {
+        color: rgb(235, 179, 11);
+        background-color: rgb(227, 227, 202);
+        border: 1px solid black;
+        margin-bottom: 10px;
+        /* 인라인 가운데로 정렬하는 방법 */
+        text-align: center;
+      }
+    }
+
+    /* 일반 PC */
+    @media screen and (min-width: 990px) and (max-width: 1200px) {
+      .header3 {
+        color: rgb(171, 88, 230);
+        background-color: beige(215, 202, 227);
+        border: 1px solid black;
+        margin-bottom: 10px;
+        /* 인라인 가운데로 정렬하는 방법 */
+        text-align: center;
+      }
+    }
+
+    /* 일반 PC */
+    @media screen and (min-width: 1200px) {
+      .header4 {
+        color: rgb(88, 187, 230);
+        background-color: black;
+        border: 1px solid black;
+        margin-bottom: 10px;
+        /* 인라인 가운데로 정렬하는 방법 */
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="header1">HTML1</h1>
+  <h1 class="header2">HTML2</h1>
+  <h1 class="header3">HTML3</h1>
+  <h1 class="header4">HTML4</h1>
+</body>
+
+</html>

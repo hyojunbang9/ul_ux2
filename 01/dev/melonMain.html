@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <title>
+   멜론 티켓
+  </title>
+  <!-- 파비콘 -->
+  <link rel="shortcut icon" type="image/x-icon"/>
+  <!-- IOS용 -->
+  <link rel="apple-touch-icon-precomposed"/>
+  <link rel="apple-touch-icon-precomposed" sizes="180x180"/>
+  <meta content="width=1126" name="viewport"/>
+  <!-- 모바일 접속시 컨텐츠 넓이 -->
+  <meta content="티켓, 콘서트, 테마/지역, 랭킹, 티켓오픈소식, 이벤트, FouU, 마이티켓" name="keywords"/>
+  <meta content="No.1 음악플랫폼 멜론에서 제공하는 공연 예매사이트. 콘서트, 팬미팅, 페스티벌, 추천공연 제공" name="description"/>
+  <meta content="8912542fdfc7aaf11e289d8bed9e86892deef890" name="naver-site-verification"/>
+  <meta content="멜론티켓" property="og:site_name"/>
+  <link href="//cdnticket.melon.co.kr/resource/style/web/common/common-f527383d8e.css" rel="stylesheet" type="text/css"/>
+  <!-- 네이버 광고 로그분석 -->
+  <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+  <!-- END 네이버 광고 로그분석 -->
+  <!-- 구매전환스크립트2-->
+  <!-- Kakao Pixel Code -->
+  <!-- End Kakao Pixel Code -->
+ </head>
+ <body>
+  <div class="index" id="wrap">
+   <!-- 이벤트일 경우 event_gnb 추가 -->
+   <div id="skip_nav">
+    <ul>
+     <li>
+     </li>
+     <li>
+     </li>
+     <li>
+     </li>
+    </ul>
+   </div>
+   <div id="header">
+    <div class="pr_none" id="header_wrap">
+     <div class="clear_g" id="gnb">
+      <div id="util_menu">
+       <p class="screen_out">
+        상단 빠른 메뉴
+       </p>
+       <div class="top_left">
+        <ul class="clear_g">
+         <li>
+          <a class="btn_gnb btn_g_link1" href="//www.melon.com">
+           멜론
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="top_right">
+        <ul class="clear_g">
+         <li class="name" id="name_area">
+         </li>
+         <li>
+          <span id="login_area">
+          </span>
+         </li>
+         <li id="sub_area">
+         </li>
+         <li>
+          <a class="btn_gnb btn_g_customer">
+           고객센터
+          </a>
+         </li>
+         <!-- 160511 이용안내 추가 -->
+         <li>
+          <a class="btn_gnb btn_g_howto">
+           이용안내
+          </a>
+         </li>
+         <!-- 글로벌 링크 추가 -->
+         <!-- //글로벌 링크 추가 -->
+        </ul>
+       </div>
+      </div>
+      <h1 id="logo">
+       <a>
+        <img alt="Melon 티켓"/>
+       </a>
+      </h1>
+      <div class="srch_set">
+       <fieldset>
+        <legend>
+         통합검색영역
+        </legend>
+        <input id="top_search" name="" title="검색 입력 편집창" type="text"/>
+        <input id="searchValue" type="hidden"/>
+        <input id="placeholderValue" type="hidden"/>
+        <button a_value="" class="btn_icon search_m" id="btn_top_search" title="검색" type="button">
+         <span class="btn_comm">
+          검색
+         </span>
+        </button>
+       </fieldset>
+      </div>
+      <div class="cmn_banner" style="display: none;">
+       <div class="gnb_banner_btn">
+       </div>
+      </div>
+     </div>
+     <div id="gnb_menu">
+      <ul class="list_gnb">
+       <!-- <li class="nth1">
+                        <a href="https://ticket.melon.com/main/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu01">홈</a>
+                    </li> -->
+       <li class="nth2">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu02">
+         콘서트
+        </a>
+       </li>
+       <li class="nth3">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu03">
+         뮤지컬/연극
+        </a>
+       </li>
+       <li class="nth12">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu12">
+         팬클럽/팬미팅
+        </a>
+       </li>
+       <li class="nth10">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu10">
+         클래식
+        </a>
+       </li>
+       <li class="nth11">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu11">
+         전시/행사
+        </a>
+       </li>
+       <li class="nth4">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu04">
+         테마/지역
+        </a>
+       </li>
+       <li class="nth5">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu05">
+         랭킹
+        </a>
+       </li>
+       <li class="nth6">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu06">
+         티켓오픈소식
+        </a>
+       </li>
+       <li class="nth7">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu07">
+         이벤트
+        </a>
+       </li>
+       <!-- <li class="nth8">
+                        <a href="https://ticket.melon.com/foru/index.htm" class="btn_gnb_menu btn_gnb btn_g_menu08">For U</a>
+                    </li> -->
+       <li class="nth9">
+        <a class="btn_gnb_menu btn_gnb btn_g_menu09">
+         마이티켓
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="clear_g" id="cont_wrap">
+    <div class="wrap_main_slider">
+     <div id="slider">
+      <div class="slider_inner">
+       <ul class="list_slider" id="sliderInner">
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+         <a>
+          <span class="thumb">
+           <span class="thumb_off">
+            <img alt="" onerror="noImage(this, 256, 320)"/>
+            <span class="frame">
+            </span>
+           </span>
+           <span class="thumb_on">
+            <img alt="" onerror="noImage(this, 256, 320)"/>
+            <span class="frame">
+            </span>
+           </span>
+          </span>
+          <span class="txt">
+           <span class="name">
+            이런 공연 어때?
+           </span>
+           <span class="opt">
+            나만 알고 싶은 공연
+           </span>
+          </span>
+          <span class="txt txt_hover">
+           <span class="name">
+            이런 공연 어때?
+           </span>
+           <span class="day">
+            나만 알고 싶은 공연
+           </span>
+          </span>
+         </a>
+        </li>
+        <li>
+        </li>
+        <li>
+         <a target="_blank">
+          <span class="thumb">
+           <span class="thumb_off">
+            <img alt="" onerror="noImage(this, 256, 320)"/>
+            <span class="frame">
+            </span>
+           </span>
+           <span class="thumb_on">
+            <img alt="" onerror="noImage(this, 256, 320)"/>
+            <span class="frame">
+            </span>
+           </span>
+          </span>
+          <span class="txt">
+           <span class="name">
+            ROLLINGHALL
+           </span>
+           <span class="opt">
+            30주년 기념 공연 모음
+           </span>
+          </span>
+          <span class="txt txt_hover">
+           <span class="name">
+            ROLLINGHALL
+           </span>
+           <span class="day">
+            30주년 기념 공연 모음
+           </span>
+          </span>
+         </a>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="pr_none" id="conts_section">
+     <!-- contents -->
+     <div class="clear_g" id="conts">
+      <div class="wrap_main_performance">
+       <ul class="list_main_performance">
+        <li class="nth1" id="offer_performance1">
+         <h2 class="tit">
+         </h2>
+         <div class="box_cont">
+          <ul id="MAIN_B_CO_1">
+          </ul>
+         </div>
+        </li>
+        <li class="nth2" id="offer_performance2">
+         <h2 class="tit">
+         </h2>
+         <div class="box_cont">
+          <ul id="MAIN_B_CO_2">
+          </ul>
+         </div>
+        </li>
+        <li class="nth3" id="offer_performance3">
+         <h2 class="tit">
+         </h2>
+         <div class="box_cont">
+          <ul id="MAIN_B_CO_3">
+          </ul>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <div class="wrap_main_float">
+       <div class="box_ticket_open">
+        <h2 class="tit_main_float">
+         티켓오픈소식
+        </h2>
+        <ul class="list_ticket_open">
+         <li class="nth1">
+         </li>
+         <li class="nth2">
+         </li>
+         <li class="nth3">
+         </li>
+         <li class="nth4">
+         </li>
+        </ul>
+        <div class="ctr">
+        </div>
+       </div>
+       <!-- 포유 -->
+       <!-- // 포유 -->
+       <!-- MELONUIT-520 190611 -->
+       <!-- // MELONUIT-520 190611 -->
+       <!-- 위시 기능 숨김 -->
+       <!-- <div class="box_wish">
+                    <h2 class="tit_main_float"><span class="eng">Wish</span>콘서트 <span class="more"><span class="eng">Wish</span>원정대 모집중</span></h2>
+                    <ul class="list_wish">
+                        </ul>
+                    <div class="ctr"><a href="#none" class="btn_comm btn_paging_prev">이전</a><span class="paging"><strong></strong> / <span>3</span></span><a href="#none" class="btn_comm btn_paging_next">다음</a></div>
+                </div>
+<script type="text/javascript">
+pagingRolling(".box_wish .list_wish",".box_wish .ctr .paging span",".box_wish .ctr .paging strong",".box_wish .ctr .btn_paging_next",".box_wish .ctr .btn_paging_prev");
+</script>
+                <div class="box_lucky_ticket">
+                    <h2 class="tit_main_float">럭키티켓</h2>
+                    <div class="cont_lucky_ticket">
+                        <a href="#none" class="inner">
+                            <span class="thumb">
+                                <img src="../resource/image/web/thumb/thumb_320_245.png" alt="" />
+                                <span class="frame"></span>
+                            </span>
+                            <span class="cont">
+                                <span class="opt">스페셜 <span class="eng">VIP</span>석 <span class="eng">100</span>매</span>
+                                <strong class="tit">마룬파이브 첫 내한공연</strong>
+                                <span class="day">2015.11.13 ~ 2015.12.31</span>
+                                <span class="time"><span class="hour">05</span>:<span class="minute">25</span>:<span class="second">36</span></span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="evt_banner"><a href="#none"><img src="../resource/image/web/thumb/banner_320_120.png" alt="" /></a></div>
+                </div>-->
+      </div>
+      <div class="wrap_main_concert">
+       <h2 class="tit_main_concert">
+        멜론티켓 PICK! 추천공연
+       </h2>
+       <ul class="list_main_concert" id="perf_poster">
+        <li class="first">
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li class="first">
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li class="first">
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li class="first">
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li class="first">
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li class="first">
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- //contents -->
+    </div>
+   </div>
+   <!-- @@@ 2016.08.16 rightWingBanner 추가 -->
+   <div class="rightWingBanner">
+    <ul>
+     <li>
+     </li>
+     <li>
+     </li>
+    </ul>
+   </div>
+   <!-- @@@ 2016.08.16 rightWingBanner 추가 -->
+   <div class="my_fold" style="width: 1008px;margin: 0 auto;">
+   </div>
+   <!-- 배너 팝업 -->
+   <!-- @@@ 2016.02.18 기획전 배너 레이어 팝업 [BannerImgVO [imgPosNo=0, imgType=W, imgUrl=/resource/image/upload/marketing/2025/05/20250508173324d038d3c5-01b7-4b5a-8882-49e500fa3e4c.jpg, imgBgColor=#FFFFFF, imgDescr=, landingType=T, landingRefType=TD, landingRefValue=211348, landingRefTypeName=티켓, landingRefTitle=2025 DOH KYUNG SOO ASIA CONCERT TOUR 〈DO it! in Seoul〉, landingRefUrl=], BannerImgVO [imgPosNo=1, imgType=W, imgUrl=/resource/image/upload/marketing/2025/05/20250508173313f1831844-41a3-4dba-a26c-bfd27c8477bb.png, imgBgColor=#FFFFFF, imgDescr=, landingType=T, landingRefType=TD, landingRefValue=211358, landingRefTypeName=티켓, landingRefTitle=2025 DOH KYUNG SOO ASIA CONCERT TOUR 〈DO it! in Seoul〉, landingRefUrl=], BannerImgVO [imgPosNo=2, imgType=W, imgUrl=/resource/image/upload/marketing/2025/05/2025050817330016f54e6b-0a2a-43da-a540-69efb7171b01.jpg, imgBgColor=#FFFFFF, imgDescr=, landingType=T, landingRefType=TD, landingRefValue=211365, landingRefTypeName=티켓, landingRefTitle=2025 DOH KYUNG SOO ASIA CONCERT TOUR 〈DO it! in Seoul〉, landingRefUrl=], BannerImgVO [imgPosNo=3, imgType=W, imgUrl=/resource/image/upload/marketing/2025/05/2025050817324802f293a0-7cd2-4842-8218-355b5957c105.jpg, imgBgColor=#FFFFFF, imgDescr=, landingType=T, landingRefType=TD, landingRefValue=211297, landingRefTypeName=티켓, landingRefTitle=2025 DOH KYUNG SOO ASIA CONCERT TOUR 〈DO it! in Seoul〉, landingRefUrl=]] -->
+   <!-- //@@@ 2016.02.18 기획전 배너 레이어 팝업 -->
+   <!-- footer -->
+   <div class="my_fold" id="footer">
+    <div class="btn_top_wrap">
+     <!-- scrollTop 1800 -->
+    </div>
+    <div class="footer_quick_link">
+     <div class="l_box">
+      <a class="linking5" href="//www.melon.com">
+       Melon
+      </a>
+     </div>
+     <div class="r_box">
+      <a class="r_box_m1">
+       예매가이드
+      </a>
+      <a class="r_box_m2">
+       티켓판매제휴
+      </a>
+      <!-- 20160317추가 -->
+      <span class="r_box_m3">
+       예매문의(1588-2314)
+      </span>
+     </div>
+    </div>
+    <div class="inner_footer">
+     <!-- UX-1513 -->
+     <ul class="clear_g">
+      <li class="first_child">
+       <a target="_blank" title="회사소개">
+        회사소개
+       </a>
+      </li>
+      <li>
+      </li>
+      <li>
+      </li>
+      <!-- <li><a href="https://checkout-web.kakao.com/terms/paid" target="_blank" title="전자금융거래약관">전자금융거래약관</a></li> -->
+      <!-- MELONUIT-268 -->
+      <!-- <li><a href="https://info.melon.com/terms/web/terms1_3.html" title="위치기반서비스 이용약관" target="_blank">위치기반서비스 이용약관</a></li> -->
+      <!-- //MELONUIT-268 -->
+      <li>
+      </li>
+      <li>
+      </li>
+      <li>
+       <a target="_blank" title="파트너센터">
+        파트너센터
+       </a>
+      </li>
+     </ul>
+     <p>
+      <span class="first">
+       <strong>
+        ㈜카카오엔터테인먼트
+       </strong>
+      </span>
+      <span>
+       경기도 성남시 분당구 판교역로 235, 에이치스퀘어 N동 8, 9, 10층
+      </span>
+      <span>
+       공동대표이사 : 권기수, 장윤중
+      </span>
+      <span class="first">
+       사업자등록번호 : 220-88-02594
+      </span>
+      <br>
+       <span class="first">
+        통신판매업신고번호 : 2018-성남분당B-0004
+        <a class="btn-info" target="_blank" title="사업자정보확인">
+         사업자정보확인
+        </a>
+       </span>
+       <span class="first">
+        고객센터(평일/주말 09:00~18:00) : 1899-0042 (유료)
+       </span>
+       <br/>
+       <span class="first">
+        호스팅서비스사업자 : (주)카카오엔터테인먼트
+       </span>
+       <span>
+        © Kakao Entertainment Corp.
+       </span>
+      </br>
+     </p>
+     <!-- //UX-1513 -->
+     <!-- 20160509 구매안전 서비스 -->
+     <div class="safe_service">
+      <dl>
+       <dt>
+        신한은행 구매안전 서비스
+       </dt>
+       <dd>
+        고객님은 안전거래를 위해 현금으로 결제시
+        <br/>
+        멜론티켓에서 가입한 신한은행으로
+        <br/>
+        구매안전서비스를 이용하실 수 있습니다.
+       </dd>
+       <dd>
+        <a target="_blank">
+         서비스 가입사실 확인
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </div>
+   <!-- //footer -->
+  </div>
+ </body>
+</html>
