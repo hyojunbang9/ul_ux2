@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 70px;
+      }
+
+      #name,
+      #id,
+      #pwd {
+        outline: none;
+        border: none;
+        border-bottom: 3px dotted black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 서버에 form 데이터를 post 방식으로 inser.jsp 전송하는 프로그램 -->
+    <form method="post" action="insert.jsp">
+      <fieldset>
+        <legend>개인정보입력하기</legend>
+        <label for="name">이름: </label
+        ><input id="name" type="type" name="name" placeholder="이름" />
+        <span id="nameMessage">성명입력</span><br />
+        <label for="id">아이디: </label
+        ><input id="id" type="type" name="id" placeholder="아이디입력" /><br />
+        <label for="pwd">비밀번호: </label
+        ><input
+          id="pwd"
+          type="password"
+          name="pwd"
+          placeholder="비밀번호입력"
+        /><br />
+      </fieldset>
+      <input type="submit" value="전송" />
+      <input type="reset" value="취소" />
+    </form>
+
+    <script>
+      // 1.객체찾는다
+      let nameMessage = document.querySelector("#nameMessage");
+      let name = document.querySelector("#name");
+
+      // 2.이벤트설정 = 함수인터페이스 onfocus, onblur
+      // onfocus 1~4글자 성명입력합니다. 한글만 인정합니다.
+      name.onfocus = (e) => (nameMessage.innerHTML = "1~4글자 성명입력합니다.");
+      name.onblur = (e) => {
+        if(name.value.length > 4) {
+            nameMessage.innerHTML = "입력한값이 4글자 초과하였습니다.";
+            name.value = '';
+        }else if(name.value.length < 1) {
+            nameMessage.innerHTML = "입력한값이 1글자 미만입니다.";
+            name.value = '';
+        }else {
+            nameMessage.innerHTML = "성공";
+        }
+      }
+    </script>
+  </body>
+</html>

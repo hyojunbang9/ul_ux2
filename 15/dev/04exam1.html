@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz02</title>
+    <style>
+      .wrap {
+        border: 1px solid black;
+        width: 500px;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>3의 배수일까 아닐까</h1>
+      <p id="value"></p>
+      <p id="print"></p>
+    </div>
+    <script>
+      let value = document.querySelector("#value");
+      let print = document.querySelector("#print");
+      let num = 0;
+      while (true) {
+        num = Number(prompt("3의배수를 입력하세요."));
+        if (num !== null && num !== "" && isNaN(Number(num)) !== true) {
+          break;
+        } else {
+          alert("다시 입력해주세요.");
+        }
+      }
+
+      if (Number(num) % 3 !== 0) {
+        value.innerHTML = num + "는 3의 배수가 아닙니다.";
+      } else {
+        let count = 0;
+        for(let i = 1; i <= num; i += 3) {
+            value.innerHTML += <b>${i}, &nbsp</b>;
+            count++;
+        }
+        print.innerHTML = `${num} 총갯수는 : ${count}`
+      }
+    </script>
+  </body>
+</html>

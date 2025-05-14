@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01</title>
+    <style>
+        .wrap {
+            border: 1px solid black;
+            width: 500px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+        <h1>4의 배수일까 아닐까</h1>
+        <p id="value"></p>
+    </div>
+    <script>
+        let value = document.querySelector("#value");
+        let num = 0;
+        while(true) {
+            num = Number(prompt('숫자를 입력하세요.'));
+            if(num !== null && num !== '' && isNaN(Number(num)) !== true) {
+                break;
+            } else {
+                alert("다시 입력해주세요.");
+            }
+        }
+        if (Number(num) % 4 === 0) {
+            value.innerHTML = (num + "는 4의 배수입니다.");
+        }else{
+            value.innerHTML = (num + "는 4의 배수가 아닙니다.");
+        }
+    </script>
+  </body>
+</html>

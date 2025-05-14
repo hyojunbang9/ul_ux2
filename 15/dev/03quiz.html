@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let number = window.prompt('숫자를 입력하시오', 'n');
+    if (number % 4 == 0) {
+      window.alert('4의 배수입니다.');
+    } else if(number === null){
+      window.alert('값을 입력 해주세요');
+    }else{
+      document.write(`${number}은(는) 4의 배수가 아닙니다.`);
+    }
+  </script>
+</body>
+
+</html>
