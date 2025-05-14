@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .wrap {
+      width: 1120px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    /* 공지사항 작성하기 부분 스타일 */
+    form {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul>li {
+      margin-bottom: 10px;
+    }
+
+    ul>li:nth-child(2) {
+      display: flex;
+      align-items: center;
+    }
+
+    label {
+      /* 라벨이 inline인 것을 확인 후 width를 주기 위해서 인라인 블럭으로 지정 */
+      display: inline-block;
+      width: 80px;
+      text-align: center;
+    }
+
+    textarea#content {
+      /* 텍스트 박스 조절 불가하게 만들기 */
+      resize: none;
+    }
+
+    input[type="submit"] {
+      margin-left: 10%;
+    }
+
+    hr {
+      margin-bottom: 10px;
+    }
+
+    /* 태이블 부분 스타일 */
+    table,
+    th,
+    td,
+    tr {
+      border: 1px solid black;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 10px;
+    }
+
+    thead,
+    tfoot {
+      background-color: rgb(237, 191, 105);
+      font-weight: 200;
+      color: white;
+    }
+
+    tbody {
+      background-color: beige;
+    }
+    td>a{
+      text-decoration: none;
+      color: black;
+      border: 1px solid black;
+      width: 100%;
+      /* 위드가 안 먹히면 */
+      display: inline-block; /* 해주기 */
+      text-align: center;
+      padding: 4px;
+      background-color: rgba(128, 128, 128, 0.559);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- 공지사항 작성하기 부분 -->
+    <form action="post" method="insert.no">
+      <fieldset>
+        <legend>공지사랑 작성하기</legend>
+        <ul>
+          <li><label for="subject">제목</label><input type="text" name="subject" size="38px" id="subject"></li>
+          <li><label for="content">내용</label><textarea name="content" id="content" cols="30" rows="10"></textarea></li>
+          <li><label for="file">첨부파일</label><input type="file" name="uPloadFile" id="file"></li>
+        </ul>
+        <input type="submit" value="작성하기">
+      </fieldset>
+    </form>
+    <hr>
+    <!-- 테이블 -->
+    <table>
+      <colgroup>
+        <col style="width: 5%;">
+        <col style="width: 50%;">
+        <col style="width: 10%;">
+        <col style="width: 10%;">
+        <col style="width: 15%;">
+        <col style="width: 10%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th colspan="2">제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th>조회수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>9</td>
+          <td>공지사항 제목 9</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>user01</td>
+          <td>2021-03-29</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>공지사항 제목 6</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>answ445</td>
+          <td>2021-03-12</td>
+          <td>67</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>공지사항 제목 3</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>tetg12</td>
+          <td>2021-03-01</td>
+          <td>98</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>공지사항 제목 2</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>palwe3</td>
+          <td>2021-01-02</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>공지사항 제목 1</td>
+          <td><a href="http://">바로가기</a></td>
+          <td>xml23</td>
+          <td>2020-12-24</td>
+          <td>124</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="color: white; text-align: center;">
+          <td colspan="4"><strong>전체 공지사항 갯수</strong></td>
+          <td colspan="2"><strong>5개</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+
+</html>
