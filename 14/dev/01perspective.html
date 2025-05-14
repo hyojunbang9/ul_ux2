@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      height: 100vh;
+      border-color: beige;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .origin {
+      border: 1px solid black;
+    }
+
+    .perspect {
+      /* perspective : 원근감 갖고 돌리기 */
+      perspective: 300px;
+    }
+
+    .origin>div {
+      /* 3초 동안 천천히 돌리겠다! */
+      transition: all 3s;
+    }
+
+    .rotatex:hover {
+      /* 상하 좌우로 움직임!! */
+      /* transform: translate(30px); */
+      /* 크기 늘리고 축소함!! ㅋㅋ ㅋㅋ 웃김 */
+      /* transform: scalex(2); */
+      /* 확대 축소는 그냥 scale */
+      /* XYZ축으로 회전하기 */
+      transform: rotateX(50deg);
+    }
+
+
+    .rotatey:hover {
+      transform: rotateY(45deg);
+    }
+
+    .rotatez:hover {
+      /* xy축 같이 비틀기 */
+      transform: skew(45deg, 45deg);
+    }
+
+    .rotate3d:hover {
+      transform: rotate3d(2.5, 1.2, -1.5, 55deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="origin perspect">
+      <div class="rotatex">
+        <img src="./../img/방효준.jpeg" alt="키보드 불빛 조절">
+      </div>
+    </div>
+    <div class="origin perspect">
+      <div class="rotatey">
+        <img src="./../img/방효준.jpeg" alt="키보드 불빛 조절">
+      </div>
+    </div>
+    <div class="origin perspect">
+      <div class="rotatez">
+        <img src="./../img/방효준.jpeg" alt="키보드 불빛 조절">
+      </div>
+      <div class="origin perspect">
+        <div class="rotate3d">
+          <img src="./../img/방효준.jpeg" alt="키보드 불빛 조절">
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
