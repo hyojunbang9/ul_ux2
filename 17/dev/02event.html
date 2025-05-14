@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    div.wrap {
+      width: 1120px;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    div#result {
+      margin: 0 auto;
+      /*센터 맞추는 역할*/
+      width: 300px;
+      height: 300px;
+      border: 5px dotted black;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      padding-left: 0;
+    }
+
+    li>button {
+      width: 100px;
+      padding: 5px 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <ul>
+      <li>
+        <button id="btnobj1">red</button>
+      </li>
+      <li>
+        <button id="btnobj2">green</button>
+      </li>
+      <li>
+        <button id="btnobj3">blue</button>
+      </li>
+    </ul>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // 객체를 찾는다.
+
+    /* 1번 방법
+    let btnobj1 = document.querySelector("#btnobj1");
+    let btnobj2 = document.querySelector("#btnobj2");
+    let btnobj3 = document.querySelector("#btnobj3");
+    let result = document.querySelector("#result");
+    */
+
+    // 2번 심화 방법
+    let btnList = document.querySelectorAll("button");
+
+    // 객체 속성, 컨텍스트, 스타일, 이벤트를 설정할 수 있다. 제일 많이하는 건
+    // 이벤트!! 를 건다!
+
+    /* 1번 방법
+    btnobj1.onclick = function(e){
+      let colortext = btnobj1.innerHTML;
+      result.style.backgroundColor = colortext;
+    }
+    btnobj2.onclick = function(e){
+      let colortext = btnobj2.innerHTML;
+      result.style.backgroundColor = colortext;
+    }
+    btnobj3.onclick = function(e){
+      let colortext = btnobj3.innerHTML;
+      result.style.backgroundColor = colortext;
+    }
+      */
+
+    // 2번 심화 방법
+    for (let i = 0; i < btnList.length; i++) {
+      btnList[i].onmouseover = e => {
+        let colortext = btnList[i].innerHTML;
+        result.style.backgroundColor = colortext;
+      };
+    }
+  </script>
+</body>
+
+</html>

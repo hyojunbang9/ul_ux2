@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>자바 스크립트로 즉시 실행 함수</h1>
+
+  <script>
+    let h1obj = document.querySelector("h1");
+    //익명 함수
+    let sum = function (a, b) {
+      return a + b;
+    };
+
+    // 즉시 실행 함수
+    (function (a, b) {
+      document.write(`10+20 = ${a + b}`);
+    }(10, 20));
+
+    let result = sum(10, 20);
+    // 방법 1 console.log(`result = ${result}`);
+    // 방법 2 h1obj.innerHTML = `result = ${result}`;
+    document.write(`result = ${result()}`);
+  </script>
+</body>
+
+</html>
