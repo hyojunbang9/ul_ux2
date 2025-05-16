@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .wrap {
+    width: 1120px;
+    margin: 0 auto;
+    border: 3px solid aquamarine;
+  }
+
+  .content {
+    width: 60%;
+    margin: 0 auto;
+    border: 3px solid black;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* id에 스타일 줄 땐 #!!!!! */
+  #img-main {
+    width: 80%;
+    border: 2px solid rebeccapurple;
+  }
+
+  .content-img {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+
+  .img-sub {
+    width: 30%;
+  }
+
+  .img-sub:hover {
+    cursor: pointer;
+    border: 3px solid salmon;
+  }
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="content">
+      <img src="./../img/coffee-blue.jpg" alt="커피" Id="img-main">
+      <div class="content-img">
+        <img src="./../img/coffee-blue.jpg" alt="커피" class="img-sub">
+        <img src="./../img/coffee-gray.jpg" alt="커피" class="img-sub">
+        <img src="./../img/coffee-pink.jpg" alt="커피" class="img-sub">
+      </div>
+    </div>
+  </div>
+  <script>
+    let imgMain = document.querySelector("#img-main");
+    let imgsubList = document.querySelectorAll(".img-sub");
+    //객체 이벤트 설정
+    for (let i = 0; i < imgsubList.length; i++) {
+      imgsubList[i].onmouseover = function (e) {
+        imgMain.src = imgsubList[i].src;
+        eventMessage(imgMain.sec);
+      };
+    }
+    /*
+    imgMain.onclick = function(event){
+      console.log(`이미지 파일 위치 this.src: ${this.src}`);
+      console.log(`이미지 파일 위치 imgMain.src: ${imgMain.src}`);
+      console.log(`this : ${this}`);
+    };
+    */
+    imgMain.onclick = event => {
+      console.log(`화살표 이미지 파일 위치 this.src: ${this.src}`);
+      console.log(`화살표 이미지 파일 위치 imgMain.src: ${imgMain.src}`);
+      console.log(`화살표 this : ${this.alert('이걸 왜 누르는데')}`);
+    };
+
+    //이벤트 핸들러 함수
+    function eventMessage() {
+      console.log(`${name} 상품을 선택 하셨습니다. 장바구니에 추가, 합계, 계산`);
+      //위의 것을 100번 하려면 100번 다 써야하는데 이렇게 함수로 만들어서
+      //위 포문에 넣어주면 계속! 몇 번씩이고 자동으로 정리할 수 있다.스
+    }
+
+    //화살표 함수에서 window === windowObject다.
+
+  </script>
+</body>
+
+</html>

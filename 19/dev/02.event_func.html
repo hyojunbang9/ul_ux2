@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .wrap {
+    width: 1120px;
+    margin: 0 auto;
+    border: 3px solid aquamarine;
+  }
+
+  .content {
+    width: 60%;
+    margin: 0 auto;
+    border: 3px solid black;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* id에 스타일 줄 땐 #!!!!! */
+  #img-main {
+    width: 80%;
+    border: 2px solid rebeccapurple;
+  }
+
+  .content-img {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+
+  .img-sub {
+    width: 30%;
+  }
+
+  .img-sub:hover {
+    cursor: pointer;
+    border: 3px solid salmon;
+  }
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="content">
+      <!-- 아래가 함수를 더럽히는 첫 번째 가장 원초적인 방법 -->
+      <!-- <img src="./../img/coffee-blue.jpg" alt="커피" Id="img-main" onmouseover="changePic()" onmouseleave="originPic()"> -->
+      <img src="./../img/coffee-blue.jpg" alt="커피" Id="img-main">
+      <div class="content-img">
+        <img src="./../img/coffee-blue.jpg" alt="커피" class="img-sub">
+        <img src="./../img/coffee-gray.jpg" alt="커피" class="img-sub">
+        <img src="./../img/coffee-pink.jpg" alt="커피" class="img-sub">
+      </div>
+    </div>
+  </div>
+  <script>
+    let imgMain = document.querySelector("#img-main");
+
+    /* 이벤트 함수 설정
+    function changePic(){
+      imgMain.src = './../img/coffee-gray.jpg';
+    }
+
+    // 이벤트 함수 설정 2번 째 방법
+    imgMain.onmouseover = changePic;
+    imgMain.onmouseleave = originPic;
+    
+    // 3번 째 방법! 람다식
+    imgMain.onmouseover = ()=> imgMain.src = './../img/coffee-gray.jpg';
+    imgMain.onmouseleave = originPic;
+    */
+
+    // 4번 째 방법, 버블링 방식
+    imgMain.addEventListener("mouseover", () => {
+      imgMain.src = './../img/coffee-gray.jpg';
+    }, false);
+
+    imgMain.addEventListener("miuseleave", originPic, false);
+    
+    function originPic() {
+      imgMain.src = './../img/coffee-blue.jpg';
+    }
+  </script>
+</body>
+
+</html>
