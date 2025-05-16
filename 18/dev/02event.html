@@ -56,40 +56,24 @@
       <li>
         <button id="btnobj3">blue</button>
       </li>
+      <li>
+        <button id="popupClose">팝업창 닫기</button>
+      </li>
     </ul>
     <div id="result"></div>
   </div>
 
   <script>
     // 객체를 찾는다.
-
-    /* 1번 방법
-    let btnobj1 = document.querySelector("#btnobj1");
-    let btnobj2 = document.querySelector("#btnobj2");
-    let btnobj3 = document.querySelector("#btnobj3");
-    let result = document.querySelector("#result");
-    */
-
     // 2번 심화 방법
     let btnList = document.querySelectorAll("button");
 
     // 객체 속성, 컨텍스트, 스타일, 이벤트를 설정할 수 있다. 제일 많이하는 건
     // 이벤트!! 를 건다!
-    
-    /* 1번 방법
-    btnobj1.onclick = function(e){
-      let colortext = btnobj1.innerHTML;
-      result.style.backgroundColor = colortext;
-    }
-    btnobj2.onclick = function(e){
-      let colortext = btnobj2.innerHTML;
-      result.style.backgroundColor = colortext;
-    }
-    btnobj3.onclick = function(e){
-      let colortext = btnobj3.innerHTML;
-      result.style.backgroundColor = colortext;
-    }
-      */
+
+      popupClose.onclick = function (event){
+        window.close();
+      };
 
     // 2번 심화 방법
     for (let i = 0; i < btnList.length; i++) {

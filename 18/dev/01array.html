@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <script>
+    //배열 선언 2개 : 배열끼리 합치는 기능 concat()
+    let numArray = [1, 2, 3];
+    let charArray = ["a", "b", "c", "d"];
+
+    document.write(`<h1>numArray = ${numArray.toString()}</h1><br>`);
+    document.write(`<h1>charArray = ${charArray.toString()}</h1><br>`);
+    document.write(`<hr>`)
+
+    let numCharArray = numArray.concat(charArray);
+    document.write(`<h1>numCharArray = ${numCharArray}</h1><br>`);
+
+    let charNumArray = charArray.concat(numArray);
+    document.write(`<h1>charNumArray = ${charNumArray}</h1><br>`);
+
+    //배열 요소끼리 합치는 기능 = join()
+    //charArray를 조인해서 문자열로 만든다.
+    let strCharArray = charArray.join();
+    document.write(`<h1>charArray join = ${strCharArray}<h1><br>`);
+    let joinCharArray = charArray.join("/");
+    document.write(`<h1>joincharArray join = ${joinCharArray}<h1><br>`);
+    document.write(`<hr>`);
+
+    //내용을 뒤에 추가하는 기능 push
+    //현재 let numArray = [1,2,3];
+    let countArray = numArray.push(10, 20);
+    document.write(`<h1>countArray = ${countArray}</h1><br>`);
+    document.write(`<h1>numArray = ${numArray}</h1><br>`);
+
+    //내용을 앞에 추가하는 기능 unshift
+    //let numArray = [1,2,3,10,20];
+    let count2 = numArray.unshift(100, 200);
+    document.write(`<h1>count2 = ${count2}</h1><br>`);
+    document.write(`<h1>numArray = ${numArray}</h1><br>`);
+
+    //뒤에서 가져오는 기능 : pop
+    //let numArray = [100,200,1,2,3,10,20];
+    let popValue = numArray.pop();
+    document.write(`<h1>popValue = ${popValue}</h1><br>`);
+    document.write(`<h1>numArray = ${numArray}</h1><br>`);
+    document.write(`<hr>`);
+
+    //내용을 앞에서 가져가는 기능 : shift
+    //let numArray = [100,200,1,2,3,10,20];
+    let shiftValue = numArray.shift();
+    document.write(`<h1>shiftValue = ${shiftValue}</h1><br>`);
+    document.write(`<h1>numArray = ${numArray}</h1><br>`);
+    document.write(`<hr>`);
+
+    //배열에서 중간 내용 삭제하기 : splice
+    //let numArray = ["a", "b", "c", "d"];
+    let spliceArray = charArray.splice(0, 2);
+    document.write(`<h1>spliceArray = ${spliceArray}</h1><br>`);
+    document.write(`<h1>charArray = ${charArray}</h1><br>`);
+    document.write(`<hr>`);
+    
+    //배열에서 중간 내용 삽입하기 : splice -> 값을 0을 줘버리면 삽입 가능
+    //let numArray = ["a", "b", "d"];
+    let splice2Array = charArray.splice(1, 0, "k");
+    document.write(`<h1>splice2Array = ${splice2Array}</h1><br>`);
+    document.write(`<h1>charArray = ${charArray}</h1><br>`);
+    document.write(`<hr>`);
+    
+    //배열에서 내용 자르는 기능 : slice()
+    //배열 내용은 건들지 않고 내가 원하는 데이터만 가져가기! 내부 내용 변경xxx
+    //let numArray = ["a", "k", "b", "d"];
+    let sliceArray = charArray.slice(1);
+    document.write(`<h1>sliceArray = ${sliceArray}</h1><br>`);
+    document.write(`<h1>charArray = ${charArray}</h1><br>`);
+    document.write(`<hr>`);
+
+  </script>
+</body>
+
+</html>

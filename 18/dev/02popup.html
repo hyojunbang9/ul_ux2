@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <button id="popup">팝업창 열기</button>
+  </div>
+  <script>
+    //객체 찾기
+    let popup = document.querySelector("#popup");
+    let popupClose = document.querySelector("#popupClose");
+    let windowObject; //지역 변수에서 전역 변수로 !
+    //해당 객체의 (entity, context, style, event)를 할 수 있다. 이벤트가 제일
+    popup.onclick = function (event) {
+      let windowObject = window.open("02event.html","event","width=700, height=500, left=100, top=100");
+    };
+
+  </script>
+</body>
+
+</html>
