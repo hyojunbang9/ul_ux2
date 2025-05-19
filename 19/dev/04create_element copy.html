@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <div>
+      <input type="text" id="message">
+      <button>리스트 추가하기</button>
+      <button>이미지 추가하기</button>
+    </div>
+  </div>
+  <script>
+    let ulNode = document.querySelector('.container>ul');
+    let message = document.querySelector('#message');
+    let button = document.querySelector('#message + button');
+    let buttonArray = document.querySelectorAll('#message ~ button');
+
+    ulNode.addEventListener("click", () => alert('test'), false);
+    //message.addEventListener("blur", () => alert('test2'), false);
+    button.addEventListener("click", ulInsertLi, false);
+    buttonArray[1].addEventListener("click",liInsertImage, false);
+
+    function ulInsertLi() {
+      let dataMessage = message.value;
+      let liNode = document.createElement("li");
+      let textNode = document.createTextNode(dataMessage);
+      // <li> textNode </li> 구조 생성!!
+      //=> LiNode 안에 textNode를 넣는다.
+      liNode.appendChild(textNode);
+      ulNode.appendChild(liNode);
+    }
+    function liInsertImage() {
+      let imgNode = document.createElement("img");
+      imgNode.src="./../img/books.png";
+      imgNode.alt="책 그림";
+      imgNode.style.maxWidth = "100%";
+      ulNode.appendChild(imgNode);
+    }
+
+  </script>
+</body>
+
+</html>

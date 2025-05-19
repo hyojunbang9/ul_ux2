@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 400px;
+      height: 300px;
+      border: 3px dotted rebeccapurple;
+      margin: 100px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .disabled {
+      color: #ccc;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+
+    .enabled {
+      color: #fff;
+      background-color: #2687ee;
+      border: 1px solid #2687ee;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <label for="btnCheck"><input type="checkbox" id="btnCheck">필수 항목 동의</label>
+    <button type="button" class="disabled" id="btnAction" disabled>다음으로 진행</button>
+  </div>
+  <script>
+    //document야 너가 가진 모든 노드가 객체 완성 되면 그때 날 불러줘
+    document.addEventListener("DOMContentLoaded", function () {
+      let btnCheck = document.querySelector("btnCheck");
+      let button = document.querySelector("btnAction");
+
+      button.addEventListener("click", () => alert('이벤트 발생'));
+
+      btnCheck.addEventListener("change", function () {
+        button.classList.toggle('disabled');
+        button.classList.toggle('enabled');
+        button.disabled = !btnCheck.checked;
+      });
+    });
+  </script>
+</body>
+
+</html>
