@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    caption {
+      text-align: start;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 550;
+    }
+
+    #col1 {
+      width: 60px;
+    }
+
+    #col2 {
+      width: 200px;
+    }
+
+    #col3 {
+      width: 100px;
+    }
+
+    input {
+      background-color: rgb(239, 239, 239, 0.5);
+      border: 1px solid rgb(201, 201, 201);
+    }
+
+    #id,
+    #pw {
+      width: 100%;
+      height: 30px;
+    }
+
+    #loginBtnTd>img {
+      width: 100%;
+    }
+
+    .btnlogin {
+      background-color: rgb(59, 176, 59);
+      text-align: center;
+      color: white;
+      font-weight: 900;
+    }
+
+    .btnbottom {
+      width: 100%;
+      text-align: center;
+    }
+
+    .btnbottom > button {
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <table>
+      <caption>로그인</caption>
+      <colgroup>
+        <col id="col1">
+        <col id="col2">
+        <col id="col3">
+      </colgroup>
+      <tr>
+        <td><input type="radio" name="member" id="member">회원</td>
+        <td><input type="radio" name="nonMember" id="nonMember">비회원(주문조회)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="text" name="id" id="id" placeholder="MIRE PICTURE ID"></td>
+        <td rowspan="2" class="btnlogin" id="loginBtnTd">로그인</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="password" name="pw" id="pw" placeholder="PASSWORD"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="checkbox" name="saveId" id="saveId">아이디저장</td>
+        <td>OTP 로그인<input type="checkbox" name="otpLogin" id="otpLogin"></td>
+      </tr>
+      <tr>
+        <div class="buttons">
+          <td colspan="3" class="btnbottom">
+            <a href="signupPage.html" target="_blank"><button>회원가입</button></a>
+            <a href="signupPage.html" target="_blank"></a><button>아이디 찾기</button>
+            <a href="signupPage.html" target="_blank"></a><button>비밀번호 찾기</button>
+          </td>
+        </div>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 8rem;
+    }
+
+    /* 메인 카테고리 */
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    /* 메뉴 */
+    ul.menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: beige;
+      height: 20vh;
+    }
+
+    ul.menu>li>a {
+      display: inline-block;
+      padding: 10px;
+      width: 100px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    ul.menu>b {
+      font-size: 1.5rem;
+    }
+
+    ul.menu>li>a:hover {
+      background-color: #3384f591;
+    }
+
+    ul.menu>a>i {
+      font-size: 2rem;
+    }
+
+    ul.menu>li.dropbtn:hover>ul.dropdown-content {
+      border-radius: 20%;
+      background-color: beige;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    ul.dropdown-content {
+      position: absolute;
+      /* 이거 하니까 하위 메뉴가 사라짐!! */
+      display: none;
+    }
+
+    ul.dropdown-content a {
+      display: block;
+      padding: 10px;
+      width: 100px;
+      text-align: center;
+    }
+
+    ul.dropdown-content a:hover {
+      background-color: #3384f591;
+    }
+
+    /* 회전목마 부분 */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 회전목마 전체 레이아웃 */
+    #content {
+      width: 100%;
+      margin: 0;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    /* 슬라이드 쇼 이미지 처리 */
+    #slide_show {
+      margin: 0;
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 110%;
+      position: absolute;
+      border-radius: 20px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 네비게이션 처리 */
+    #navigateleft {
+      position: absolute;
+      bottom: 50%;
+      /* 이미지 중심(측정 기준) 이동하는 거!!! */
+      transform: translate(-50%, 50%);
+      left: 9%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      z-index: 1;
+      color: rgba(211, 211, 211, 0.763);
+
+    }
+
+    #navigateright {
+      position: absolute;
+      bottom: 50%;
+      /* 이미지 중심(측정 기준) 이동하는 거!!! */
+      transform: translate(50%, 50%);
+      right: 9%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      z-index: 1;
+      color: rgba(211, 211, 211, 0.763);
+
+    }
+
+    /* 마우스 올렸을 때 색 바꾸기 */
+    #navigateleft:hover,
+    #navigateright:hover {
+      color: white;
+    }
+
+    /* indicator로 지정한 아이콘 4개 처리 */
+    #indicator i {
+      /* 이거랑 indicator > a > i랑 똑같음 */
+      font-size: 0.5rem;
+      font-weight: 700;
+    }
+
+    #indicator i:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    /* 이미지 중앙 하단에 배치시키기 */
+    #indicator {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.635);
+      /* Id가 우선순위가 높에서 그냥 인디게이터에 못 씀 */
+      z-index: 1;
+    }
+
+    /* indicator 활성화 배경 색 */
+    .active {
+      color: rgb(210, 30, 30);
+    }
+
+    /* 하단 정보 받는 부분 */
+    .container {
+      display: flex;
+      justify-content: row;
+      gap: 40px;
+    }
+
+    .aside,
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      background-color: rgba(172, 255, 47, 0.728);
+      text-align: center;
+    }
+
+    .footer {
+      background-color: rgba(236, 207, 168, 0.781);
+      width: 100%;
+      height: 20vh;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .idcontainer>li {
+      display: inline-block;
+      width: 100%;
+      list-style-type: none;
+      margin-bottom: 5px;
+    }
+
+    li>input {
+      width: 100%;
+      height: 30px;
+      border-style: none;
+    }
+
+    #id {
+      width: 70%;
+    }
+
+    #idEmail {
+      width: 30%;
+    }
+
+    .birth>li{
+      /* 이게 왜 됨?? */
+      display: flex;
+    }
+
+    #year,
+    #day {
+      width: 32%;
+    }
+    
+    #month {
+      width: 33%;
+      margin-right: 5px;
+      height: 3.3vh;
+      border: none;
+    }
+
+    #sex,
+    #countryCode {
+      border: none;
+      width: 100%;
+      height: 4vh;
+      margin-bottom: 5px;
+    }
+
+    #phNum {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 5px;
+      border-style: none;
+    }
+
+    #tel {
+      width: 70%;
+      height: 30px;
+      margin-bottom: 5px;
+      border-style: none;
+    }
+
+    #passNum {
+      width: 30%;
+      height: 30px;
+      margin-bottom: 5px;
+      text-align: center;
+      background-color: rgb(59, 176, 59);
+      color: white;
+      border-style: none;
+    }
+
+    .join {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 5px;
+      text-align: center;
+      background-color: rgb(59, 176, 59);
+      color: white;
+      border-style: none;
+      padding-top: 5px;
+    }
+
+    #passNum:hover,
+    .join:hover {
+      background-color: green;
+    }
+
+    #checkNum {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 5px;
+      border-style: none;
+    }
+
+    .wrap2 {
+      background-color: rgba(172, 255, 47, 0.728);
+      padding: 20px;
+      width: 50%;
+    }
+
+    .idcontainer {
+      background-color: whitesmoke;
+      padding: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title">
+    <ul class="menu">
+      <b><i class="fa-solid fa-camera-retro"></i>&nbsp;&nbsp;MIRE PHOTO</b>
+      <li><a href="#">menu</a></li>
+      <li><a href="#">menu</a></li>
+      <li><a href="#">menu</a></li>
+      <li class="dropbtn">
+        <a href="#">menu</a>
+        <ul class="dropdown-content">
+          <li><a href="">animal</a></li>
+          <li><a href="">video</a></li>
+          <li><a href="">picture</a></li>
+        </ul>
+      </li>
+      <a href="https://www.instagram.com/win.min__?igsh=dzZjOGQzZTNoYTVu"><i
+          class="fa-brands fa-square-threads"></i></a>
+      <a href="https://www.instagram.com/banghyojun?igsh=MW1xdGU4azU1cTY0Nw%3D%3D&utm_source=qr"><i
+          class="fa-brands fa-square-instagram"></i></a>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div id="content">
+      <div id="slide_show">
+        <a href="#"><img src="./../dev2/img/고양이.webp" alt="회전 목마1"></a>
+        <a href="#"><img src="./../dev2/img/도마뱀.webp" alt="회전 목마2"></a>
+        <a href="#"><img src="./../dev2/img/스라소니.webp" alt="회전 목마3"></a>
+        <a href="#"><img src="./../dev2/img/청설모.webp" alt="회전 목마4"></a>
+      </div>
+      <i class="fa-solid fa-circle-chevron-left" id="navigateleft"></i>
+      <i class="fa-solid fa-circle-chevron-right" id="navigateright"></i>
+      <div id="indicator">
+        <a href="#" class="active"><i class="fa-solid fa-circle"></i></a>
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+        <a href="#"><i class="fa-solid fa-circle"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="nav">
+      <h2>NAV</h2>
+    </div>
+    <div class="wrap2">
+      <h1>MIRE PICTURE</h1>
+      <div class="idcontainer">
+        <ul>
+          <p>아이디</p>
+          <li><input type="text" id="id" name="id"><input id="idEmail" name="idEmail" placeholder="@naver.com"></input>
+          </li>
+          <p>비밀번호</p>
+          <li><input type="text"></li>
+          <p>비밀번호 확인</p>
+          <li><input type="text"></li>
+          <p>이름</p>
+          <li><input type="text"></li>
+          <p>생년월일</p>
+          <div class="birth">
+            <li><input type="text" id="year" placeholder="년(4자)">
+              <select id="month">
+                <option>월</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select><input type="text" id="day" placeholder="일">
+            </li>
+          </div>
+          <p>성별</p>
+          <li><select name="sex" id="sex">
+              <option>성별</option>
+              <option>남성</option>
+              <option>여성</option>
+              <option>기타</option>
+            </select></li>
+          <p>이메일<span>선택</span></p>
+          <li><input type="text" placeholder="선택 입력"></li>
+          <p>휴대전화</p>
+          <select id="countryCode">
+            <option>대한민국 +82</option>
+            <option>뉴질랜드 +64</option>
+            <option>미국 +1</option>
+          </select>
+          <p><input type="text" placeholder="전화번호 입력" id="tel"><button id="passNum">인증번호 받기</button></p>
+          <p><input type="text" placeholder="인증 번호" id="checkNum"></p>
+          <li><div class="join"><a href="http://127.0.0.1:5500/01/dev2/registerJoin.html">가입 하기</a></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="aside">
+      <h2>ASIDE</h2>
+    </div>
+  </div>
+  <div class="footer">
+    <h2>FOOTER</h2>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const content = document.querySelector("#content");         //회전 목마의 전체 레이아웃
+      const imgList = document.querySelectorAll("#slide_show img");  //회전 목마 이미지 리스트
+      const navigateleft = document.querySelector("#navigateleft");  //왼쪽 네이게이트
+      const navigateright = document.querySelector("#navigateright");  //오른쪽 네비게이트
+      const indicatorList = document.querySelectorAll("#indicator > a");  //indicator a 리스트
+
+      let list = [1, 0, 0, 0];
+      let timerId; //타이머 핸들
+      //함수 시간에 따라 (이미지 화면 n번) & (indicator n번)이 선택 돼서 화면에 나와야한다.
+      function listArray() {
+        for (let i = 0; i < list.length; i++) {
+          imgList[i].style.zIndex = list[i]; // 1,0,0,0 -> 0,1,0,0 -> 0,0,1,0 -> 0,0,0,1로 자동으로 바뀜
+        }
+        for (let i = 0; i < indicatorList.length; i++) {
+          indicatorList[i].classList.remove('active');
+        }
+        let index = list.indexOf(1); //1의 위치를 알려줘! 라는 식(indexof)
+        indicatorList[index].classList.add('active');
+      }
+      listArray();
+
+      //왼쪽 네비게이터를 누르면 화면 이동
+      navigateleft.addEventListener("click", () => {
+        // let list = [1, 0, 0, 0]; -> [0, 0, 0, 1]; 
+        let value = list.shift();
+        list.push(value);
+        listArray();
+      });
+
+      navigateright.addEventListener("click", () => {
+        // let list = [1, 0, 0, 0]; -> [0, 0, 0, 1]; 
+        list.unshift(list.pop());
+        listArray();
+      });
+      //3초마다 네비게이터 기능 작동 시키기
+      function startTimer() {
+        timerId = setInterval(() => {
+          list.unshift(list.pop());
+          listArray();
+        }, 3000);
+      }
+      startTimer();
+
+      //contain 영역에 마우스가 올라가면 타이머를 멈추게 한다.
+      content.addEventListener("mouseenter", () => { clearInterval(timerId) });
+
+      //contain 영역에서 마우스가 빠져나가면 타이머를 멈추게 한다.
+      content.addEventListener("mouseleave", () => { starTimer(); });
+
+      //indicator 클릭 시 해당 화면으로 이동
+      for (let i = 0; i < indicatorList.length; i++) {
+        indicatorList[i].addEventListener("click", () => {
+          list = [0, 0, 0, 0];
+          list[i] = 1;
+          listArray();
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
