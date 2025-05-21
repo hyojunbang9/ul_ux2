@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 전체 기본 세팅 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    /* 메뉴 */
+    ul.menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(127, 255, 212, 0.419);
+    }
+
+    ul.menu>li>a {
+      display: inline-block;
+      padding: 10px;
+      width: 100px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    ul.menu>li>a:hover {
+      background-color: #3384f591;
+    }
+
+    ul.menu>li.dropbtn:hover > ul.dropdown-content {
+      background-color: rgba(215, 161, 62, 0.589);
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul.dropdown-content {
+      position: absolute;
+      /* 이거 하니까 하위 메뉴가 사라짐!! */
+      display: none;
+    }
+
+    ul.dropdown-content a {
+      display: block;
+      padding: 10px;
+      width: 100px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    ul.dropdown-content a:hover{
+      background-color: #3384f591;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="menu">
+    <li><a href="#">home</a></li>
+    <li><a href="#">home</a></li>
+    <li><a href="#">home</a></li>
+    <li class="dropbtn">
+      <a href="#">home</a>
+      <ul class="dropdown-content">
+        <li><a href="">sub</a></li>
+        <li><a href="">sub</a></li>
+        <li><a href="">sub</a></li>
+      </ul>
+    </li>
+  </ul>
+</body>
+
+</html>
